@@ -25,7 +25,20 @@ css 중요 내용 정리
 그리드 연습하기 https://jsfiddle.net/9og2tnw8/14/
 ``` 
 [그리드 연습하기](https://jsfiddle.net/9og2tnw8/14/)
-
+  ### clear   
+  앞서 `float`를 통해 사진 주위로 글을 쓰는 방법을 배웠다면, 이번엔 사진 주위로 글자가 따라붙지 않게 하는 방법을 배워보자. 여기 `clear`를 이용하자.   
+  clear는 취소하다는 의미로 `float` `left` 와 `right` 을 취소 할 수 있다.
+  여기서 중요한 것은 `float: left` 에는 `clear: left`만 적용이 된다는 점. `clear: right`을 적용할 수 는 없는 노릇이다.   
+  양 옆 사이에 있는 그리드가 왼쪽은 `float left` 오른쪽은 `float right` 가 되어 있을 때 둘 다로부터 도망치는 방법은 `clear both`를 사용하면 된다.   
+  
+  **※ 그리드 테두리 만들기** : 그리드를 감싸고 있는 div 혹은 body에 `border: 5px solid black;`를 적용해보자. div내에 그리도 요소가 있음에도 불구하고, 전부 떠 있기 때문에 밑에 요소는 없어 높이가 0이라는 결과가 나온다. 이로인해 테두리가 위에만 감싸는 원치않는 결과가 발생한다. 이를 clear로 해결하면 된다.
+  ```
+.clearfix {
+	clear: left;
+}
+  ```
+  clearfix 클래스를 가진 div는 clear 속성을 통해 맨 밑으로 가게 되고 결과적으로 테두리가 맨 밑까지 이어진다.
+  
 
 ## 가로 가운데 정렬
 ## 세로 가운데 정렬
