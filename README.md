@@ -40,28 +40,52 @@ css 중요 내용 정리
   플로트를 사용한 요소는 공중에 뜨게 되며 밑에 있는 요소는 그 밑으로 올라온다. 그래서 위에서 봤을 때는 두 요소가 겹쳐보이는 효과를 가진다.
   이 겹쳐보이는 효과로 인해 밑에 있던 요소는 블록 요소 부분이 가려지지만 다행스럽게도 밑에 있던 그 요소의 인라인 요소 부분은 가려지지 않는다.   
   이로써 이미지 옆에 글이 자연스럽게 적힐 수 있다. 인라인 요소는 플로트 된 요소에 가려지지 않는 특성을 가진다.
-  ### Grid layout
-`float`를 여러 번 사용(`multiple float`)하면 그리드 레이아웃을 만들 수 있다.   
-```
-그리드 연습하기 https://jsfiddle.net/9og2tnw8/14/
-``` 
-[그리드 연습하기](https://jsfiddle.net/9og2tnw8/14/)
-  ### clear   
-  앞서 `float`를 통해 사진 주위로 글을 쓰는 방법을 배웠다면, 이번엔 사진 주위로 글자가 따라붙지 않게 하는 방법을 배워보자. 여기 `clear`를 이용하자.   
-  clear는 취소하다는 의미로 `float` `left` 와 `right` 을 취소 할 수 있다.
-  여기서 중요한 것은 `float: left` 에는 `clear: left`만 적용이 된다는 점. `clear: right`을 적용할 수 는 없는 노릇이다.   
-  양 옆 사이에 있는 그리드가 왼쪽은 `float left` 오른쪽은 `float right` 가 되어 있을 때 둘 다로부터 도망치는 방법은 `clear both`를 사용하면 된다.   
+### Grid layout
+  `float`를 여러 번 사용(`multiple float`)하면 그리드 레이아웃을 만들 수 있다.   
+  ```
+  그리드 연습하기 https://jsfiddle.net/9og2tnw8/14/
+  ``` 
+  [그리드 연습하기](https://jsfiddle.net/9og2tnw8/14/)
+### clear   
+앞서 `float`를 통해 사진 주위로 글을 쓰는 방법을 배웠다면, 이번엔 사진 주위로 글자가 따라붙지 않게 하는 방법을 배워보자. 여기 `clear`를 이용하자.   
+clear는 취소하다는 의미로 `float` `left` 와 `right` 을 취소 할 수 있다.
+여기서 중요한 것은 `float: left` 에는 `clear: left`만 적용이 된다는 점. `clear: right`을 적용할 수 는 없는 노릇이다.   
+양 옆 사이에 있는 그리드가 왼쪽은 `float left` 오른쪽은 `float right` 가 되어 있을 때 둘 다로부터 도망치는 방법은 `clear both`를 사용하면 된다.   
   
-  **※ 그리드 테두리 만들기** : 그리드를 감싸고 있는 div 혹은 body에 `border: 5px solid black;`를 적용해보자. div내에 그리도 요소가 있음에도 불구하고, 전부 떠 있기 때문에 밑에 요소는 없어 높이가 0이라는 결과가 나온다. 이로인해 테두리가 위에만 감싸는 원치않는 결과가 발생한다. 이를 clear로 해결하면 된다.
-  ```
+**※ 그리드 테두리 만들기** : 그리드를 감싸고 있는 div 혹은 body에 `border: 5px solid black;`를 적용해보자. div내에 그리도 요소가 있음에도 불구하고, 전부 떠 있기 때문에 밑에 요소는 없어 높이가 0이라는 결과가 나온다. 이로인해 테두리가 위에만 감싸는 원치않는 결과가 발생한다. 이를 clear로 해결하면 된다.
+```
 .clearfix {
-	clear: left;
+  clear: left;
 }
-  ```
-  clearfix 클래스를 가진 div는 clear 속성을 통해 맨 밑으로 가게 되고 결과적으로 테두리가 맨 밑까지 이어진다.
+```
+clearfix 클래스를 가진 div는 clear 속성을 통해 맨 밑으로 가게 되고 결과적으로 테두리가 맨 밑까지 이어진다.
   
 
 ## 가로 가운데 정렬
 ## 세로 가운데 정렬
   baseline의 개념을 알아야 한다.   
-  vertical-align
+  ```
+  vertical-align 개념 https://opentutorials.org/course/718/3903
+  ```
+  
+### line-height   
+  인라인 박스의 높이를 지정한다. 👉👉 글을 적는 칸의 높이를 정해준다는 의미이다.   
+  따라서 세로 가운데 정렬을 하려면, 
+  1. 글 적는 칸의 높이를 전체높이로 설정(높이 px값 설정이 선전제이다.)해주고,   
+  2. 안에 있는 요소에 `display: inline-block` 와 `vertical-align: middle`를 주면,   
+  전체 높이를 먹은 칸의 가운데에 입력이 되기 때문에 세로 가운데 정렬이 된다.
+  ```
+  line-height 개념 https://opentutorials.org/course/718/3902
+
+  /*이런 식으로 사용.*/
+  main {
+    height: 720px;
+    line-height: 720px;
+  }
+  
+  main .info {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+  }
+  ```
