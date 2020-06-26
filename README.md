@@ -1,6 +1,27 @@
 # Summarize_css
 css 중요 내용 정리
-
+## 웹폰트
+  폰트는 기본적으로 사용자 환경에도 설치되어 있어야 적용이 가능하다. 상대방이 설치가 되어있지 않아도, 그 폰트를 불러오려면 웹폰트를 사용해야한다.   
+  1. 구글 폰트 적용   
+  구글폰트를 적용하려면 원하는 구글 폰트의 embed 탭에 들어가 link 소스를 가져오자. html > head에 붙여넣고 css에 들어가 font-familly를 입력하면 적용된다.
+  ```
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+  ```
+  2. @font-face 적용   
+  구글 폰트 외의 특정한 폰트를 사용하고 싶으면 폰트 파일을 업로드 하고 @font-face를 사용해 불러오면 된다.   
+  업로드 하지 않고 싶더라도 src: url("폰트를 가져올 웹주소")을 적용하면 된다.
+  ```
+  font-face 사용법 https://developer.mozilla.org/ko/docs/Web/CSS/@font-face
+  
+  @font-face {
+	src: url("../fonts/THIS_IS_COOL_FONT.otf"); //파일을 업로드 하고 불러온 모습.
+	font-family: "JOHA"; //업로드한 파일을 사용할 때 이름을 JOHA로 하겠다.
+  }
+  ```
+  설치가 되어 있는 폰트를 사용하려는 경우에는 url이 아닌 `local`를 사용하면 된다. 
+  ```
+  src: local("설치 된 폰트 이름");
+  ```
 ## 선택자
 ## display
   `block` : 블록 요소는 페이지 전체 길이를 자신의 가로 길이로 가지려는 특성을 가진다.   
