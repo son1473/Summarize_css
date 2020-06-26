@@ -76,6 +76,7 @@ clearfix 클래스를 가진 div는 clear 속성을 통해 맨 밑으로 가게 
   전체 높이를 먹은 칸의 가운데에 입력이 되기 때문에 세로 가운데 정렬이 된다.
   ```
   line-height 개념 https://opentutorials.org/course/718/3902
+  실습 https://jsfiddle.net/804ytm5p/37/
 
   /*이런 식으로 사용.*/
   main {
