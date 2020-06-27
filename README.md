@@ -90,3 +90,7 @@ clearfix 클래스를 가진 div는 clear 속성을 통해 맨 밑으로 가게 
     vertical-align: middle;
   }
   ```
+## 마진 겹침 현상
+```
+상하 마진 값이 겹치는 현상https://opentutorials.org/course/2418/13464
+```
