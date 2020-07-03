@@ -101,3 +101,10 @@ grid를 감싸고 있는 div의 넓이가 전체를 차지하고 있을 경우�
 ```
 상하 마진 값이 겹치는 현상https://opentutorials.org/course/2418/13464
 ```
+
+## 반응형 웹
+@media 미디어 쿼리
+```
+@media (max-width: 767px) {
+}
+```
