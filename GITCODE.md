@@ -20,16 +20,15 @@ Git은 리누스 토발즈가 리눅스의 소스 코드를 관리하기 위해 
   root-commit == 첫번째 커밋   
   `git commit (-m없이 하기)` 커밋 메시지를 여러 줄로 만들 수 있다. 저장방법은 Esc키 (i를 누르면 입력모드) > :wq + Enter   
   여러줄로 할 경우 커밋 메시지의 제목과 상세 설명 사이에는 한 줄을 비워두면 좋다.
-### 커밋 수정하기
-  `git add 후 git commit --amend `  
   
-  
+  ### 커밋 수정하기
+    `git add 후 git commit --amend `  
 
 ## 상태
-일단 Git에서 파일들은 크게 다음 2가지 상태를 가집니다.
+일단 Git에서 파일들은 크게 다음 2가지 상태를 가진다.
 1. Untracked 상태   
 2. Tracked 상태  
-그리고 Tracked 상태는 다시 아래와 같은 3가지 상태로 나눌 수 있구요. 
+그리고 Tracked 상태는 다시 아래와 같은 3가지 상태로 나눌 수 있다.
 1. Staged 상태   
 2. Unmodified 상태   
 3. Modified 상태   
@@ -58,7 +57,22 @@ _메뉴얼에서 나가고 싶으면 q를 누르면 된다 Ctrl + c 취소 됨._
 18. `git show commit ID` _어떤 파일이 어떻게 변했는지 보여준다._
 19. `git config alias.history 'log --pretty=oneline' ` _이렇게 하면 앞으로_ `git history` _라고만 쳐도 된다.
 20. `git diff commit id 2가지`
+21. `git tag [태그 이름] [커밋 아이디]`
 
 ## invite a collaborator
 아무나 Push 할 수는 없다. - 콜라보레이터 설정하기   
 Settings - Manage access - PUBLIC REPOSITORY 밑 Invite a collaborator
+
+
+## git reset
+**head** : 특정한 커밋을 가리키는 것. *head가 달라지면 working directory 내 파일도 달라진다.*
+* --soft
+* --mixed
+* --hard   
+`Head^` `Head^^` `Head^^^` === `Head~1`, `Head~2`, `Head~3`
+
+## branch
+**의미** : 한가지의 코드흐름을 의미한다.   
+**마스터 브랜치** - 레포지토리를 만들고 커밋을 하면 자동으로 생성되는 브랜치   
+`git branch [branch name]` 브랜치를 만들면 이전 커밋들 또한 그 브랜치에 복사되어 들어간다.   
+브랜치 이동 - `git checkout [branch name]`   
